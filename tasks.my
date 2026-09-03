@@ -1,0 +1,13 @@
+; tasks.my — durable task plan for esp32-pendulum. Same alist shape as
+; sibling repos' tasks.my.
+
+((tasks . (
+  ("ESP32-PENDULUM-CONFIRM-BOARD-MODEL" . (
+    (priority . 7.0)
+    (capabilities . (hardware esp32 verification))
+    (origin . esp32-pendulum)
+    (context . "README states plainly: target is ESP32-S3-N16R8 (2x Xtensa LX7, 16MB Flash, 8MB Octal PSRAM) but 'not yet confirmed this is the board physically on hand -- check before idf.py set-target'. This is the project's own stated open item, not an inferred one.")
+    (description . "Physically confirm the exact ESP32 board variant on hand (chip markings / silkscreen / idf.py tool identification) before running idf.py set-target with an assumed target -- a wrong target silently miscompiles for the wrong flash/PSRAM layout rather than failing loudly.")
+    (done . ())
+  ))
+)))
